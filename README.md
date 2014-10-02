@@ -1,3 +1,6 @@
-== SVN post-commit hook
+# SVN post-commit hooks
 
-Post commit hook for SVN repository, which sends email notifications for specific files. Implemented in Python.
+Post commit hooks for SVN repository.
+
+* notify.py - sends email notifications after file changes, for specific emails.
+* config.py - common settings
