@@ -1,0 +1,13 @@
+#!/bin/sh
+
+#   [1] REPOS-PATH   (the path to this repository)
+#   [2] REV          (the number of the revision just committed)
+#   [3] TXN-NAME     (the name of the transaction that has become REV)
+
+# REPOS="$1"
+# REV="$2"
+# TXN_NAME="$3"
+
+/path/to/script/directory/notify.py commit "$1" $2 "path/to/file.txt" "user1@example.com, user2@example.com"
+
+
