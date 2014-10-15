@@ -13,6 +13,7 @@ def main(argv):
 	if len(argv) < 6:
 		lgr.write("ERR: Not egnough arguments. Provided %d, expected 5. Args: %s \n" % (len(argv), str(argv)))
 		sys.exit()
+
 	action = argv[1]
 	repo_path = argv[2]
 	rev = int(argv[3])
@@ -20,11 +21,10 @@ def main(argv):
 	email_to = argv[5]
 
 	paths = commands.getoutput('/usr/bin/svnlook changed -r %d %s' % (rev, repo_path))
-	lgr.write("DEBUG: %s \n" % str(paths))
 	paths_list = paths.split("\n")
 	fire_notify = False
 	for item in paths_list:
-		(sts, path) = item.split()[:2]
+		path = item[4:].strip()
 		if path == search_path:
 			fire_notify = True
 			break
